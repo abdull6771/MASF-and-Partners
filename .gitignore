@@ -1,0 +1,17 @@
+# Dependencies & build output
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.pyc
+
+# Local data (submissions database, uploaded attachments)
+backend/data/*.db
+backend/data/uploads/
+
+# Environment files (copy from .env.example)
+.env
+
+# OS noise
+.DS_Store
+Thumbs.db

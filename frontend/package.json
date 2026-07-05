@@ -1,0 +1,24 @@
+{
+  "name": "masf-partners-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Corporate website for MASF & Partners Limited — Environmental & Engineering Consultancy, Abuja",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/postbuild.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lucide-react": "^0.525.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^6.30.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "@vitejs/plugin-react": "^4.6.0",
+    "tailwindcss": "^4.1.11",
+    "vite": "^6.3.5"
+  }
+}

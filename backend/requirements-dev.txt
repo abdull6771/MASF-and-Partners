@@ -1,0 +1,5 @@
+# Tools for regenerating bundled assets (not needed at runtime).
+#   python scripts/generate_profile_pdf.py   -> frontend/public/downloads/*.pdf
+#   python scripts/generate_og_image.py      -> frontend/public/og-image.png
+reportlab>=4.0
+pillow>=10.0
