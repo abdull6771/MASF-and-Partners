@@ -28,11 +28,6 @@ export default function ProjectCard({ project }) {
       </p>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">{project.description}</p>
       <div className="mt-4 flex flex-wrap items-center gap-2">
-        {project.value && (
-          <span className="rounded-full bg-brand-800 px-3 py-1 text-xs font-bold text-white">
-            {project.value}
-          </span>
-        )}
         {project.tags?.map((tag) => (
           <span key={tag} className="rounded-full border border-slate-200 px-3 py-1 text-xs font-medium text-slate-600">
             {tag}

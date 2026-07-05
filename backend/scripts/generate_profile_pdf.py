@@ -81,14 +81,14 @@ SERVICES = {
 }
 
 PROJECTS = [
-    ("2006", "7.4km 33KV overhead line — Capital Science Academy", "Kuje, FCT", "N25.25M"),
-    ("2006", "Transformer relocation & 33KV conversion (500kVA & 300kVA)", "Kuje, FCT", "N8.65M"),
-    ("2006", "33KV line & 500kVA substation — Oando Aviation Depot", "Abuja Int'l Airport", "N5.15M"),
-    ("2008", "Electrical upgrade — Oando Station & Chicken Republic", "Wuse, Abuja", "N15.55M"),
-    ("2009", "LNG plant & accessories — six Oando stations", "Wuse I-V & Kubwa", "N12.25M"),
-    ("2014", "Wireless broadband — Nigerian Army Training Centre (NATRAC)", "Kontagora Barracks", "—"),
-    ("2014", "Broadband internet — US Army internship training", "Jaji & Kontagora", "—"),
-    ("2014-15", "Hotel intercom (40 ext.), wireless CCTV + training, VSAT with WiFi", "Niger State", "—"),
+    ("2006", "7.4km 33KV overhead line — Capital Science Academy", "Kuje, FCT"),
+    ("2006", "Transformer relocation & 33KV conversion (500kVA & 300kVA)", "Kuje, FCT"),
+    ("2006", "33KV line & 500kVA substation — Oando Aviation Depot", "Abuja Int'l Airport"),
+    ("2008", "Electrical upgrade — Oando Station & Chicken Republic", "Wuse, Abuja"),
+    ("2009", "LNG plant & accessories — six Oando stations", "Wuse I-V & Kubwa"),
+    ("2014", "Wireless broadband — Nigerian Army Training Centre (NATRAC)", "Kontagora Barracks"),
+    ("2014", "Broadband internet — US Army internship training", "Jaji & Kontagora"),
+    ("2014-15", "Hotel intercom (40 ext.), wireless CCTV + training, VSAT with WiFi", "Niger State"),
 ]
 
 EQUIPMENT = [
@@ -193,8 +193,8 @@ def build() -> None:
             story.append(Paragraph(item, bullet, bulletText="•"))
 
     story.append(Paragraph("Selected Track Record", h2))
-    table_data = [["Year", "Project", "Location", "Value"]] + [list(row) for row in PROJECTS]
-    table = Table(table_data, colWidths=[16 * mm, 86 * mm, 46 * mm, 22 * mm], repeatRows=1)
+    table_data = [["Year", "Project", "Location"]] + [list(row) for row in PROJECTS]
+    table = Table(table_data, colWidths=[18 * mm, 100 * mm, 52 * mm], repeatRows=1)
     table.setStyle(TableStyle([
         ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
         ("FONTSIZE", (0, 0), (-1, -1), 8),
@@ -212,8 +212,8 @@ def build() -> None:
     story.append(table)
     story.append(Spacer(1, 3))
     story.append(Paragraph(
-        "Contract values as recorded at award. Engagements from 2006-2009 were delivered by the firm's "
-        "principals prior to incorporation and are presented as part of the team's track record.", small))
+        "Engagements from 2006-2009 were delivered by the firm's principals prior to incorporation "
+        "and are presented as part of the team's track record.", small))
 
     story.append(Paragraph("In-House Field Instrumentation", h2))
     for item in EQUIPMENT:

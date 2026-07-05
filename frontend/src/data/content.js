@@ -281,7 +281,6 @@ export const projects = [
     title: "7.4km 33KV Overhead Line — Capital Science Academy",
     location: "Kuje, FCT",
     year: "2006",
-    value: "₦25.25M",
     category: "Power & Energy",
     tags: ["33KV", "Overhead line"],
     description:
@@ -292,7 +291,6 @@ export const projects = [
     title: "Electrical Upgrade — Oando Station & Chicken Republic",
     location: "Wuse, Abuja",
     year: "2008",
-    value: "₦15.55M",
     category: "Power & Energy",
     tags: ["Transformer", "Security lighting"],
     description:
@@ -302,7 +300,6 @@ export const projects = [
     title: "LNG Plant & Accessories — Oando Stations",
     location: "Wuse I–V & Kubwa, Abuja",
     year: "2009",
-    value: "₦12.25M",
     category: "Power & Energy",
     tags: ["LNG", "Multi-site rollout"],
     description:
@@ -312,7 +309,6 @@ export const projects = [
     title: "Transformer Relocation & 33KV Conversion",
     location: "Kuje, FCT",
     year: "2006",
-    value: "₦8.65M",
     category: "Power & Energy",
     tags: ["500kVA", "300kVA"],
     description:
@@ -322,7 +318,6 @@ export const projects = [
     title: "33KV Line & 500kVA Substation — Oando Aviation Depot",
     location: "Nnamdi Azikiwe International Airport, Abuja",
     year: "2006",
-    value: "₦5.15M",
     category: "Power & Energy",
     tags: ["Aviation", "Substation"],
     description:
@@ -333,7 +328,6 @@ export const projects = [
     title: "Wireless Broadband — Nigerian Army Training Centre",
     location: "NATRAC, Kontagora Barracks, Niger State",
     year: "2014",
-    value: null,
     category: "ICT & Telecommunications",
     tags: ["Wireless", "Defence"],
     description:
@@ -344,7 +338,6 @@ export const projects = [
     title: "Broadband Internet — US Army Internship Training",
     location: "Jaji, Kaduna & Kontagora",
     year: "2014",
-    value: null,
     category: "ICT & Telecommunications",
     tags: ["Broadband", "Multi-location"],
     description:
@@ -354,7 +347,6 @@ export const projects = [
     title: "Hotel Communications & Security Systems",
     location: "Niger State",
     year: "2014–2015",
-    value: null,
     category: "Safety & Security",
     tags: ["CCTV", "VSAT", "40-line intercom"],
     description:
@@ -363,7 +355,7 @@ export const projects = [
 ];
 
 export const projectsNote =
-  "Contract values as recorded at award. Engagements from 2006–2009 were delivered by the firm's principals prior to incorporation and are presented as part of the team's track record.";
+  "Engagements from 2006–2009 were delivered by the firm's principals prior to incorporation and are presented as part of the team's track record.";
 
 export const equipment = [
   {
