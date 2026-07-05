@@ -7,7 +7,7 @@ export default function NotFound() {
   usePageMeta("Page not found", "The page you were looking for could not be found.");
 
   return (
-    <section className={`${container} flex flex-col items-start py-24 sm:py-32`}>
+    <section className={`${container} flex flex-col items-start pb-24 pt-32 sm:pb-32 sm:pt-40`}>
       <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-600">Error 404</p>
       <h1 className="mt-3 font-display text-4xl font-bold tracking-tight text-brand-950 sm:text-5xl">
         This page is off the grid.

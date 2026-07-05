@@ -46,6 +46,7 @@ function ServiceRow({ pillarId, service, index, open, onToggle }) {
 }
 
 function PillarSection({ pillar, indexOffset }) {
+  const alternate = indexOffset % 2 === 1;
   const [openItems, setOpenItems] = useState(() => new Set());
 
   function toggle(index) {
@@ -61,7 +62,9 @@ function PillarSection({ pillar, indexOffset }) {
     <section
       id={pillar.id}
       aria-labelledby={`${pillar.id}-heading`}
-      className="scroll-mt-24 border-b border-slate-200 py-14 last:border-b-0 sm:py-16"
+      className={`scroll-mt-24 border-b border-slate-200 py-14 last:border-b-0 sm:py-16 ${
+        alternate ? "bg-slate-50/70" : "bg-white"
+      }`}
     >
       <div className={`${container} grid gap-10 lg:grid-cols-[0.9fr_1.1fr]`}>
         <Reveal>
@@ -83,7 +86,7 @@ function PillarSection({ pillar, indexOffset }) {
               to="/contact"
               className="mt-6 inline-flex items-center gap-1 rounded-sm text-sm font-semibold text-brand-700 transition hover:text-brand-900"
             >
-              Discuss a {pillar.title.toLowerCase()} brief
+              Discuss your {pillar.title} brief
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
@@ -120,8 +123,9 @@ export default function Services() {
         title="Four pillars. Twenty ways to put them to work."
         lede="Every service below is delivered by our own engineers, technologists and environmental specialists — one firm accountable for the whole scope."
         motif="circuit"
+        stat={{ value: "20", label: "Specialist services across four pillars" }}
       >
-        <nav aria-label="Service pillars" className="mt-8 flex flex-wrap gap-2.5">
+        <nav aria-label="Service pillars" className="rise-in mt-8 flex flex-wrap gap-2.5" style={{ animationDelay: "260ms" }}>
           {pillars.map((pillar) => (
             <a
               key={pillar.id}

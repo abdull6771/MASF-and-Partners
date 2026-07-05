@@ -70,6 +70,22 @@ export function DotGrid({ className = "", id = "dotgrid" }) {
   );
 }
 
+/** Outline of the brand "M" monogram — used as a large section watermark. */
+export function MonogramMark({ className = "" }) {
+  return (
+    <svg className={className} viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+      <path
+        d="M14 46V18l18 17 18-17v28"
+        stroke="currentColor"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="32" cy="35" r="3.5" fill="currentColor" />
+    </svg>
+  );
+}
+
 export function CatenaryLines({ className = "" }) {
   return (
     <svg

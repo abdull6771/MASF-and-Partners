@@ -127,6 +127,7 @@ daily Windows Task Scheduler job or a volume snapshot in Docker.
 | All copy, projects, team | `frontend/src/data/content.js` — one data module drives every page                        |
 | Add a project            | Append to `projects` in `content.js` (`category`, optional `featured: true`)              |
 | Add testimonials         | Fill the `testimonials` array in `content.js` — the Home section appears automatically     |
+| Board portraits          | Drop images into `frontend/public/team/` with the filenames listed in `frontend/public/team/README.txt` — cards swap from branded placeholders automatically |
 | Certificate scans        | Drop images in `frontend/public/certificates/`, then set `image: "/certificates/x.jpg"` on entries in `credentials` |
 | WhatsApp number          | `company.whatsapp` in `content.js`                                                        |
 | Regenerate profile PDF   | Edit + run `backend/scripts/generate_profile_pdf.py` (needs `pip install -r backend/requirements-dev.txt`) |

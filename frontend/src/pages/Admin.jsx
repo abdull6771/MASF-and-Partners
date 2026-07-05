@@ -83,7 +83,7 @@ export default function Admin() {
 
   if (!token) {
     return (
-      <section className={`${container} py-20 sm:py-28`}>
+      <section className={`${container} pb-20 pt-32 sm:pb-28 sm:pt-36`}>
         <div className="mx-auto max-w-md rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <KeyRound className="h-8 w-8 text-brand-600" aria-hidden="true" />
           <h1 className="mt-4 font-display text-2xl font-bold text-brand-950">Enquiries admin</h1>
@@ -133,7 +133,7 @@ export default function Admin() {
   }
 
   return (
-    <section className={`${container} py-12 sm:py-16`}>
+    <section className={`${container} pb-12 pt-28 sm:pb-16 sm:pt-32`}>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <h1 className="font-display text-3xl font-bold tracking-tight text-brand-950">

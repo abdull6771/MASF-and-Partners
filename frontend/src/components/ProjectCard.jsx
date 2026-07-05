@@ -1,21 +1,22 @@
 import { MapPin } from "lucide-react";
 import { card } from "../lib/styles.js";
 
-const CATEGORY_STYLES = {
-  "Power & Energy": "bg-amber-100 text-amber-900",
-  "ICT & Telecommunications": "bg-sky-100 text-sky-900",
-  "Safety & Security": "bg-emerald-100 text-emerald-900",
+// Neutral badge with a category-coded dot keeps the palette disciplined.
+const CATEGORY_DOTS = {
+  "Power & Energy": "bg-amber-500",
+  "ICT & Telecommunications": "bg-sky-500",
+  "Safety & Security": "bg-emerald-500",
 };
 
 export default function ProjectCard({ project }) {
   return (
     <article className={`${card} flex h-full flex-col`}>
       <div className="flex items-center justify-between gap-3">
-        <span
-          className={`rounded-full px-3 py-1 text-xs font-semibold ${
-            CATEGORY_STYLES[project.category] ?? "bg-slate-100 text-slate-700"
-          }`}
-        >
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
+          <span
+            aria-hidden="true"
+            className={`h-1.5 w-1.5 rounded-full ${CATEGORY_DOTS[project.category] ?? "bg-brand-500"}`}
+          />
           {project.category}
         </span>
         <span className="text-sm font-semibold text-slate-500">{project.year}</span>

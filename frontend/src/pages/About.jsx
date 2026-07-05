@@ -1,4 +1,5 @@
-import { Award, Building2, CalendarDays, HardHat, MapPin, Target, Telescope, Users } from "lucide-react";
+import { useState } from "react";
+import { Award, Building2, CalendarDays, HardHat, MapPin, Target, Telescope, UserRound, Users } from "lucide-react";
 import CtaBand from "../components/CtaBand.jsx";
 import PageHero from "../components/PageHero.jsx";
 import Reveal from "../components/Reveal.jsx";
@@ -29,7 +30,7 @@ function Story() {
       <div className={`${container} grid gap-12 lg:grid-cols-[1.2fr_0.8fr]`}>
         <Reveal>
           <p className={eyebrow}>Our story</p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-brand-950 sm:text-4xl">
+          <h2 className="mt-3 text-balance font-display text-3xl font-bold tracking-tight text-brand-950 sm:text-4xl">
             Built in Abuja. Measured against the best.
           </h2>
           <div className="mt-6 space-y-5 text-base leading-relaxed text-slate-600">
@@ -139,6 +140,44 @@ function initialsOf(name) {
     .toUpperCase();
 }
 
+/**
+ * Board card with a portrait slot. Drop an image at the path in
+ * `person.photo` (see frontend/public/team/README.txt) and it replaces the
+ * branded initials placeholder automatically — no code change needed.
+ */
+function LeaderCard({ person }) {
+  const [photoAvailable, setPhotoAvailable] = useState(Boolean(person.photo));
+  return (
+    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+      <div className="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-brand-100 via-slate-100 to-sea-500/15">
+        {photoAvailable ? (
+          <img
+            src={person.photo}
+            alt={`Portrait of ${person.name}`}
+            loading="lazy"
+            onError={() => setPhotoAvailable(false)}
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+          />
+        ) : (
+          <div className="flex h-full w-full flex-col items-center justify-center" aria-hidden="true">
+            <UserRound className="absolute -bottom-8 h-3/4 w-3/4 text-brand-200/50" strokeWidth={1} />
+            <span className="relative font-display text-4xl font-bold tracking-tight text-brand-700/70">
+              {initialsOf(person.name)}
+            </span>
+          </div>
+        )}
+      </div>
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="font-display text-base font-bold text-brand-950">{person.name}</h3>
+        <p className="mt-1 text-sm font-semibold text-brand-600">{person.role}</p>
+        {person.credentials && (
+          <p className="mt-2 text-xs leading-relaxed text-slate-500">{person.credentials}</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function Leadership() {
   return (
     <section className="py-16 sm:py-20 lg:py-24">
@@ -150,20 +189,8 @@ function Leadership() {
         />
         <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {leadership.map((person, index) => (
-            <Reveal as="li" key={person.name} delay={index * 60} className="h-full">
-              <div className={`${card} flex h-full flex-col`}>
-                <span
-                  aria-hidden="true"
-                  className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br from-brand-600 to-sea-800 font-display text-lg font-bold text-white"
-                >
-                  {initialsOf(person.name)}
-                </span>
-                <h3 className="mt-4 font-display text-base font-bold text-brand-950">{person.name}</h3>
-                <p className="mt-1 text-sm font-semibold text-brand-600">{person.role}</p>
-                {person.credentials && (
-                  <p className="mt-2 text-xs leading-relaxed text-slate-500">{person.credentials}</p>
-                )}
-              </div>
+            <Reveal as="li" key={person.name} delay={(index % 4) * 60} className="h-full">
+              <LeaderCard person={person} />
             </Reveal>
           ))}
         </ul>
@@ -298,6 +325,7 @@ export default function About() {
         title="Two disciplines. One accountable firm."
         lede="Environmental science and hard engineering rarely live under one roof. Since 2013, that combination has been our advantage — and our clients'."
         motif="topo"
+        stat={{ value: "2013", label: "Established in Abuja · RC 1161410" }}
       />
       <Story />
       <VisionMissionValues />

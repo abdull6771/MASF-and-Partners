@@ -14,7 +14,7 @@ export default function SectionHeading({
     <Reveal className={center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
       {eyebrow && <p className={dark ? eyebrowDark : eyebrowLight}>{eyebrow}</p>}
       <Tag
-        className={`mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl ${
+        className={`mt-3 text-balance font-display text-3xl font-bold tracking-tight sm:text-4xl ${
           dark ? "text-white" : "text-brand-950"
         }`}
       >

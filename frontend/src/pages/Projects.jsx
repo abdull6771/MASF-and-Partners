@@ -31,7 +31,8 @@ export default function Projects() {
         eyebrow="Track record"
         title="Work that carries real load"
         lede="High-voltage lines, aviation fuel depots, military broadband, hotel security — a portfolio built on scopes where failure is not an option."
-        motif="topo"
+        motif="catenary"
+        stat={{ value: "₦66.8M", label: "Contracted across five delivered power projects" }}
       />
 
       <section className="py-14 sm:py-16 lg:py-20">

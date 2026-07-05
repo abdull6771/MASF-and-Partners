@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import PageHero from "../components/PageHero.jsx";
 import Reveal from "../components/Reveal.jsx";
-import { DotGrid } from "../components/Motifs.jsx";
 import { company, serviceOptions } from "../data/content.js";
 import usePageMeta from "../lib/usePageMeta.js";
 import { container } from "../lib/styles.js";
@@ -495,27 +494,33 @@ function ContactDetails() {
         </ul>
       </div>
 
-      {/* Map placeholder — swap for an embedded map when an API key is available. */}
-      <div className="on-dark relative flex-1 overflow-hidden rounded-3xl bg-linear-to-br from-sea-900 via-brand-950 to-brand-900 p-8">
-        <DotGrid className="absolute inset-0 h-full w-full text-white/[0.08]" id="map-dots" />
-        <div className="relative flex h-full min-h-56 flex-col items-start justify-end">
-          <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-amber-400 text-brand-950 shadow-lg">
-            <MapPin className="h-6 w-6" aria-hidden="true" />
-          </span>
-          <p className="mt-4 font-display text-lg font-bold text-white">Wuse II, Abuja</p>
-          <p className="mt-1 text-sm text-brand-100/80">
-            {company.address.suite} — behind AP Plaza.
-          </p>
-          <a
-            href={company.mapsUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-white/30 px-4 py-2 text-xs font-semibold text-white transition hover:bg-white/10"
-          >
-            Open in Google Maps
-            <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-            <span className="sr-only">(opens in a new tab)</span>
-          </a>
+      {/* Live map (keyless Google Maps embed). */}
+      <div className="relative min-h-80 flex-1 overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
+        <iframe
+          title="Map — MASF & Partners, Business Plaza, Wuse II, Abuja"
+          src="https://maps.google.com/maps?q=Business%20Plaza%2C%20Wuse%20II%2C%20Abuja%2C%20Nigeria&z=16&output=embed"
+          className="absolute inset-0 h-full w-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
+        />
+        <div className="pointer-events-none absolute inset-x-3 bottom-3">
+          <div className="pointer-events-auto flex items-center justify-between gap-3 rounded-2xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur">
+            <p className="flex items-center gap-2 text-xs font-semibold text-brand-950">
+              <MapPin className="h-4 w-4 shrink-0 text-brand-600" aria-hidden="true" />
+              Wuse II, Abuja — behind AP Plaza
+            </p>
+            <a
+              href={company.mapsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex shrink-0 items-center gap-1 rounded-sm text-xs font-semibold text-brand-700 transition hover:text-brand-900"
+            >
+              Open in Google Maps
+              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+              <span className="sr-only">(opens in a new tab)</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -533,8 +538,9 @@ export default function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Tell us what you are planning"
-        lede="A tender, a site, a system that keeps failing — describe it and we will come back with a clear next step. Typical response time: one business day."
-        motif="circuit"
+        lede="A tender, a site, a system that keeps failing — describe it and we will come back with a clear next step."
+        motif="catenary"
+        stat={{ value: "1 day", label: "Typical response to new enquiries" }}
       />
       <section className="py-14 sm:py-16 lg:py-20">
         <div className={`${container} grid gap-8 lg:grid-cols-[0.9fr_1.1fr]`}>

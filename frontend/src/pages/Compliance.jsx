@@ -42,6 +42,7 @@ export default function Compliance() {
         title="Every document a tender board asks for. Current."
         lede="Procurement teams should not have to chase paperwork. MASF & Partners maintains each statutory registration and clearance required for Nigerian public and corporate procurement — consistent, current and verifiable on request."
         motif="topo"
+        stat={{ value: "8", label: "Statutory credentials, current and verifiable" }}
       />
 
       <section className="py-16 sm:py-20 lg:py-24">

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
 import BrandMark from "./BrandMark.jsx";
-import { TopoLines } from "./Motifs.jsx";
+import { MonogramMark, TopoLines } from "./Motifs.jsx";
 import { company, pillars } from "../data/content.js";
 import { container } from "../lib/styles.js";
 
@@ -17,6 +17,7 @@ export default function SiteFooter() {
   return (
     <footer className="on-dark relative overflow-hidden bg-brand-950 text-brand-100">
       <TopoLines className="pointer-events-none absolute -right-24 -top-24 h-[28rem] w-[28rem] text-white/5" />
+      <MonogramMark className="pointer-events-none absolute -bottom-16 right-8 hidden h-72 w-72 -rotate-6 text-white/[0.04] lg:block" />
       <div className={`${container} relative grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:py-16`}>
         <div>
           <div className="flex items-center gap-3">
@@ -127,9 +128,7 @@ export default function SiteFooter() {
           <p>
             © {new Date().getFullYear()} {company.name} · {company.rc} · All rights reserved.
           </p>
-          <p>
-            {company.address.line2}, {company.address.city}, Nigeria
-          </p>
+          <p>Built in Abuja — serving clients nationwide.</p>
         </div>
       </div>
     </footer>

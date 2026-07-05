@@ -43,6 +43,7 @@ export default function Capabilities() {
         title="Data you can defend starts with instruments we own"
         lede="Renting equipment means waiting, unknown calibration and gaps in the chain of custody. Our environmental practice runs on a company-owned fleet — mobilised at short notice for every study we sign."
         motif="circuit"
+        stat={{ value: "7", label: "Instrument systems owned and calibrated in-house" }}
       />
 
       <section className="py-16 sm:py-20 lg:py-24">
