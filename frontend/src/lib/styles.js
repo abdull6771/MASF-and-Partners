@@ -5,7 +5,7 @@ export const btnPrimary =
   "inline-flex items-center justify-center gap-2 rounded-full bg-brand-800 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-700 active:bg-brand-900";
 
 export const btnAccent =
-  "inline-flex items-center justify-center gap-2 rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-brand-950 transition hover:bg-amber-300 active:bg-amber-500";
+  "inline-flex items-center justify-center gap-2 rounded-full bg-accent-400 px-6 py-3 text-sm font-semibold text-brand-950 transition hover:bg-accent-300 active:bg-accent-500";
 
 export const btnGhostDark =
   "inline-flex items-center justify-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10";

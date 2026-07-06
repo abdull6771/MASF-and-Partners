@@ -22,13 +22,13 @@ from reportlab.platypus import (
     TableStyle,
 )
 
-TEAL = colors.HexColor("#0e3f3b")
-TEAL_DARK = colors.HexColor("#062a27")
-SEA = colors.HexColor("#16405c")
-AMBER = colors.HexColor("#f59e0b")
+NAVY = colors.HexColor("#0d3a66")
+NAVY_DARK = colors.HexColor("#071f3d")
+INDIGO = colors.HexColor("#283a82")
+LEMON = colors.HexColor("#8aa914")
 SLATE = colors.HexColor("#334155")
 SLATE_LIGHT = colors.HexColor("#64748b")
-LINE = colors.HexColor("#d7e3e0")
+LINE = colors.HexColor("#d5e2f0")
 
 OUT_PATH = (
     Path(__file__).resolve().parent.parent.parent
@@ -41,10 +41,10 @@ OUT_PATH = (
 body = ParagraphStyle("body", fontName="Helvetica", fontSize=9.5, leading=14, textColor=SLATE)
 bullet = ParagraphStyle("bullet", parent=body, leftIndent=10, bulletIndent=0)
 h2 = ParagraphStyle(
-    "h2", fontName="Helvetica-Bold", fontSize=13, leading=17, textColor=TEAL, spaceBefore=14, spaceAfter=6
+    "h2", fontName="Helvetica-Bold", fontSize=13, leading=17, textColor=NAVY, spaceBefore=14, spaceAfter=6
 )
 h3 = ParagraphStyle(
-    "h3", fontName="Helvetica-Bold", fontSize=10.5, leading=14, textColor=SEA, spaceBefore=8, spaceAfter=3
+    "h3", fontName="Helvetica-Bold", fontSize=10.5, leading=14, textColor=INDIGO, spaceBefore=8, spaceAfter=3
 )
 small = ParagraphStyle("small", parent=body, fontSize=8, leading=11, textColor=SLATE_LIGHT)
 center_small = ParagraphStyle("center_small", parent=small, alignment=TA_CENTER)
@@ -127,15 +127,15 @@ def on_page(canvas, doc):
     canvas.saveState()
     width, height = A4
     # Header band
-    canvas.setFillColor(TEAL_DARK)
+    canvas.setFillColor(NAVY_DARK)
     canvas.rect(0, height - 26 * mm, width, 26 * mm, stroke=0, fill=1)
     canvas.setFillColor(colors.white)
     canvas.setFont("Helvetica-Bold", 16)
     canvas.drawString(18 * mm, height - 14 * mm, "MASF & PARTNERS LIMITED")
-    canvas.setFillColor(AMBER)
+    canvas.setFillColor(LEMON)
     canvas.setFont("Helvetica-Oblique", 9.5)
     canvas.drawString(18 * mm, height - 20 * mm, '"Let our services be your advantage."')
-    canvas.setFillColor(colors.HexColor("#ade4da"))
+    canvas.setFillColor(colors.HexColor("#b3d9ff"))
     canvas.setFont("Helvetica", 7.5)
     canvas.drawRightString(width - 18 * mm, h_pos := height - 12 * mm, "Environmental & Engineering Consultancy")
     canvas.drawRightString(width - 18 * mm, h_pos - 5 * mm, "Wuse II, Abuja - RC 1161410")
@@ -164,7 +164,7 @@ def build() -> None:
     story = []
 
     story.append(Paragraph("Company Profile", ParagraphStyle(
-        "title", fontName="Helvetica-Bold", fontSize=19, leading=23, textColor=TEAL)))
+        "title", fontName="Helvetica-Bold", fontSize=19, leading=23, textColor=NAVY)))
     story.append(Spacer(1, 4))
     story.append(Paragraph(
         "MASF & Partners Limited is an environmental and engineering consultancy established in 2013 "
@@ -199,9 +199,9 @@ def build() -> None:
         ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
         ("FONTSIZE", (0, 0), (-1, -1), 8),
         ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-        ("BACKGROUND", (0, 0), (-1, 0), TEAL),
+        ("BACKGROUND", (0, 0), (-1, 0), NAVY),
         ("TEXTCOLOR", (0, 1), (-1, -1), SLATE),
-        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#f0f7f5")]),
+        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#eef4fb")]),
         ("GRID", (0, 0), (-1, -1), 0.4, LINE),
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("LEFTPADDING", (0, 0), (-1, -1), 5),
@@ -245,7 +245,7 @@ def build() -> None:
         "management, air quality & noise, socio-economics, power systems and estate valuation.", body))
 
     story.append(Paragraph("Contact", h2))
-    story.append(HRFlowable(width="100%", thickness=0.8, color=AMBER))
+    story.append(HRFlowable(width="100%", thickness=0.8, color=LEMON))
     story.append(Spacer(1, 6))
     story.append(Paragraph(
         "Suite B21, Business Plaza (formerly Fanaha Plaza), Behind AP Plaza, Wuse II, Abuja, Nigeria<br/>"

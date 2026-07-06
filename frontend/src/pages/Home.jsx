@@ -46,7 +46,7 @@ function Hero() {
               instruments and in-house team to stand behind every deliverable.
             </p>
             <p
-              className="rise-in mt-5 font-display text-lg font-semibold text-amber-300"
+              className="rise-in mt-5 font-display text-lg font-semibold text-accent-300"
               style={{ animationDelay: "250ms" }}
             >
               “{company.tagline}”
@@ -90,7 +90,7 @@ function Hero() {
                 ))}
               </ul>
             </div>
-            <span className="absolute -right-3 -top-4 inline-flex rotate-2 items-center gap-1.5 rounded-full bg-amber-400 px-3.5 py-1.5 text-xs font-bold text-brand-950 shadow-lg">
+            <span className="absolute -right-3 -top-4 inline-flex rotate-2 items-center gap-1.5 rounded-full bg-accent-400 px-3.5 py-1.5 text-xs font-bold text-brand-950 shadow-lg">
               <Zap className="h-3.5 w-3.5" /> 33KV energised
             </span>
             <span className="absolute -bottom-4 -left-3 inline-flex -rotate-2 items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-xs font-bold text-brand-900 shadow-lg">
@@ -233,7 +233,7 @@ function ServicePillars() {
                   connectivity or a secure site — and we will map the scope with you.
                 </p>
               </div>
-              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-amber-300 transition group-hover:text-amber-200">
+              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-accent-300 transition group-hover:text-accent-200">
                 Talk to us
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden="true" />
               </span>
@@ -304,7 +304,7 @@ function CapabilitiesTeaser() {
             </ul>
             <Link
               to="/capabilities"
-              className="mt-6 inline-flex items-center gap-1 rounded-sm text-sm font-semibold text-amber-300 transition hover:text-amber-200"
+              className="mt-6 inline-flex items-center gap-1 rounded-sm text-sm font-semibold text-accent-300 transition hover:text-accent-200"
             >
               See the full instrument fleet
               <ArrowRight className="h-4 w-4" aria-hidden="true" />

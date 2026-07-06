@@ -71,7 +71,7 @@ function Field({ id, label, required = false, error, children }) {
       <label htmlFor={id} className="block text-sm font-semibold text-brand-950">
         {label}
         {required && (
-          <span className="text-amber-600" aria-hidden="true">
+          <span className="text-accent-700" aria-hidden="true">
             {" "}
             *
           </span>
@@ -237,7 +237,7 @@ function ContactForm() {
     <form onSubmit={handleSubmit} noValidate className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
       <h2 className="font-display text-xl font-bold text-brand-950">Send us your brief</h2>
       <p className="mt-1.5 text-sm text-slate-500">
-        Fields marked <span className="font-semibold text-amber-600">*</span> are required.
+        Fields marked <span className="font-semibold text-accent-700">*</span> are required.
       </p>
 
       <div className="mt-6 grid gap-5 sm:grid-cols-2">

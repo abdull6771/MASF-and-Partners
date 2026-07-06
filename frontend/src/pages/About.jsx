@@ -105,7 +105,7 @@ function VisionMissionValues() {
               <ul className="mt-3 space-y-2.5">
                 {mission.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-base leading-relaxed text-slate-600">
-                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" aria-hidden="true" />
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
                     {item}
                   </li>
                 ))}

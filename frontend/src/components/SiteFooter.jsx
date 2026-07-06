@@ -33,7 +33,7 @@ export default function SiteFooter() {
             Environmental &amp; engineering consultancy delivering measurable advantage from Abuja
             since 2013.
           </p>
-          <p className="mt-4 font-display text-sm font-semibold text-amber-300">
+          <p className="mt-4 font-display text-sm font-semibold text-accent-300">
             “{company.tagline}”
           </p>
         </div>
@@ -111,7 +111,7 @@ export default function SiteFooter() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={`${label} (opens in a new tab)`}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-brand-100 transition hover:border-amber-300 hover:text-amber-300"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-brand-100 transition hover:border-accent-300 hover:text-accent-300"
                 >
                   <Icon className="h-4 w-4" aria-hidden="true" />
                 </a>

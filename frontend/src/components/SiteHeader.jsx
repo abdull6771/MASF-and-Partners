@@ -25,7 +25,7 @@ function navLinkClass({ isActive }) {
   return [
     "rounded-md px-2.5 py-2 text-sm font-medium transition",
     isActive
-      ? "font-semibold text-white underline decoration-amber-400 decoration-2 underline-offset-8"
+      ? "font-semibold text-white underline decoration-accent-400 decoration-2 underline-offset-8"
       : "text-brand-100/80 hover:text-white",
   ].join(" ");
 }
@@ -70,7 +70,7 @@ function MobileMenu({ panelRef, onClose }) {
                 className={({ isActive }) =>
                   [
                     "block rounded-lg px-4 py-3 font-display text-2xl font-semibold transition",
-                    isActive ? "bg-white/10 text-amber-300" : "text-white hover:bg-white/5",
+                    isActive ? "bg-white/10 text-accent-300" : "text-white hover:bg-white/5",
                   ].join(" ")
                 }
               >
@@ -81,7 +81,7 @@ function MobileMenu({ panelRef, onClose }) {
         </ul>
         <Link
           to="/contact"
-          className="mt-8 inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-3.5 text-base font-semibold text-brand-950"
+          className="mt-8 inline-flex items-center justify-center rounded-full bg-accent-400 px-6 py-3.5 text-base font-semibold text-brand-950"
         >
           Request a Consultation
         </Link>

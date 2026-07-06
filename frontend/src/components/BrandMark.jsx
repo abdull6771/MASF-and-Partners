@@ -4,8 +4,8 @@ export default function BrandMark({ className = "h-10 w-10" }) {
     <svg viewBox="0 0 64 64" className={className} aria-hidden="true" focusable="false">
       <defs>
         <linearGradient id="brandmark-g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#15776d" />
-          <stop offset="1" stopColor="#16405c" />
+          <stop offset="0" stopColor="#146bbd" />
+          <stop offset="1" stopColor="#283a82" />
         </linearGradient>
       </defs>
       <rect width="64" height="64" rx="14" fill="url(#brandmark-g)" />
@@ -17,7 +17,7 @@ export default function BrandMark({ className = "h-10 w-10" }) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx="32" cy="35" r="3.5" fill="#fbbf24" />
+      <circle cx="32" cy="35" r="3.5" fill="#c3e64f" />
     </svg>
   );
 }

@@ -10,10 +10,10 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 WIDTH, HEIGHT = 1200, 630
-TEAL_DARK = (6, 42, 39)
-SEA_DARK = (16, 51, 73)
-AMBER = (245, 158, 11)
-MINT = (173, 228, 218)
+NAVY_DARK = (7, 31, 61)
+INDIGO_DARK = (30, 44, 102)
+LEMON = (195, 230, 79)
+SKY = (179, 217, 255)
 
 OUT_PATH = Path(__file__).resolve().parent.parent.parent / "frontend" / "public" / "og-image.png"
 FONT_DIR = Path("C:/Windows/Fonts")
@@ -36,7 +36,7 @@ def build() -> None:
         row_draw = ImageDraw.Draw(row)
         for x in range(0, WIDTH, 4):
             t = min(1.0, (x / WIDTH) * 0.5 + for_row * 0.5)
-            color = tuple(round(a + (b - a) * t) for a, b in zip(TEAL_DARK, SEA_DARK))
+            color = tuple(round(a + (b - a) * t) for a, b in zip(NAVY_DARK, INDIGO_DARK))
             row_draw.rectangle([x, 0, x + 4, 1], fill=color)
         image.paste(row, (0, y))
 
@@ -63,7 +63,7 @@ def build() -> None:
     scaled = [(ox + x * scale, oy + y * scale) for x, y in m_points]
     draw.line(scaled, fill=(255, 255, 255, 230), width=12, joint="curve")
     cx, cy = ox + 32 * scale, oy + 35 * scale
-    draw.ellipse([cx - 10, cy - 10, cx + 10, cy + 10], fill=(*AMBER, 255))
+    draw.ellipse([cx - 10, cy - 10, cx + 10, cy + 10], fill=(*LEMON, 255))
 
     image = Image.alpha_composite(image.convert("RGBA"), overlay)
     draw = ImageDraw.Draw(image)
@@ -74,9 +74,9 @@ def build() -> None:
     font_small = load_font(["segoeui.ttf", "arial.ttf"], 22)
 
     left = 300
-    draw.rectangle([left, 158, left + 64, 165], fill=AMBER)
+    draw.rectangle([left, 158, left + 64, 165], fill=LEMON)
     draw.text((left, 190), "MASF & Partners", font=font_bold, fill=(255, 255, 255))
-    draw.text((left, 268), "Limited", font=font_bold, fill=MINT)
+    draw.text((left, 268), "Limited", font=font_bold, fill=SKY)
     draw.text(
         (left, 366),
         "Environmental & Engineering Consultancy — Abuja",
@@ -87,15 +87,15 @@ def build() -> None:
         (left, 416),
         '"Let our services be your advantage."',
         font=font_italic,
-        fill=AMBER,
+        fill=LEMON,
     )
     draw.text(
         (left, 520),
         "EIA studies  ·  33KV power  ·  ICT networks  ·  Safety systems",
         font=font_small,
-        fill=MINT,
+        fill=SKY,
     )
-    draw.text((left, 556), "RC 1161410  ·  Since 2013", font=font_small, fill=(160, 190, 185))
+    draw.text((left, 556), "RC 1161410  ·  Since 2013", font=font_small, fill=(150, 175, 205))
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     image.convert("RGB").save(OUT_PATH, "PNG", optimize=True)

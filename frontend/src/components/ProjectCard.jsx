@@ -3,7 +3,7 @@ import { card } from "../lib/styles.js";
 
 // Neutral badge with a category-coded dot keeps the palette disciplined.
 const CATEGORY_DOTS = {
-  "Power & Energy": "bg-amber-500",
+  "Power & Energy": "bg-accent-500",
   "ICT & Telecommunications": "bg-sky-500",
   "Safety & Security": "bg-emerald-500",
 };

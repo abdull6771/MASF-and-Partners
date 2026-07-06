@@ -122,9 +122,10 @@ daily Windows Task Scheduler job or a volume snapshot in Docker.
 
 ## Design decisions
 
-- **Palette** — deep brand teal (`brand-*`) with a deep-blue partner hue
-  (`sea-*`), both derived from the green/blue logo, over white and slate. One
-  warm amber accent for primary CTAs. All text combinations meet WCAG 2.1 AA.
+- **Palette** — navy with light-blue tints (`brand-*`) and a deep-indigo
+  partner hue (`sea-*`), over white and slate, with a lemon-green accent
+  (`accent-*`) for primary CTAs and highlights. All text combinations meet
+  WCAG 2.1 AA.
 - **Typography** — Space Grotesk (display) + Inter (body), loaded with
   `display=swap`.
 - **Graphics** — no stock photos; abstract SVG motifs (topographic contours,

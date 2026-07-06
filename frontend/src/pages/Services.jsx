@@ -130,7 +130,7 @@ export default function Services() {
             <a
               key={pillar.id}
               href={`#${pillar.id}`}
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-brand-100 transition hover:border-amber-300 hover:text-amber-300"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-brand-100 transition hover:border-accent-300 hover:text-accent-300"
             >
               <pillar.icon className="h-4 w-4" aria-hidden="true" />
               {pillar.title}
