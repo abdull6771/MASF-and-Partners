@@ -12,6 +12,9 @@ backend/data/uploads/
 # Environment files (copy from .env.example)
 .env
 
+# Vercel local link
+.vercel
+
 # OS noise
 .DS_Store
 Thumbs.db

@@ -95,7 +95,24 @@ docker build --build-arg VITE_SITE_URL=https://your-domain.tld -t masf-site .
 docker run -p 8000:8000 -v masf-data:/app/backend/data --env-file backend/.env masf-site
 ```
 
-**Split hosting** (Netlify/Vercel frontend + Railway/Render backend): set
+**Vercel (multi-service):** the repo ships with a root `vercel.json` defining
+two services — the Vite frontend and the FastAPI backend — with `/api/*`
+rewritten to the backend on the same domain (no CORS setup needed). Import
+the GitHub repo in Vercel and deploy. Recommended environment variables in
+the Vercel dashboard:
+
+- `MASF_SMTP_*` — **important on Vercel**: the serverless filesystem is
+  ephemeral, so SQLite submissions and uploaded attachments do not persist
+  between invocations. Configure SMTP so every enquiry is emailed to the
+  inbox (or point `MASF_DB_PATH` at persistent storage). The `/admin` listing
+  is not useful on Vercel for the same reason.
+- `VITE_SITE_URL` — production domain, baked into sitemap/robots/OG tags.
+- `MASF_ADMIN_TOKEN`, `MASF_TURNSTILE_SECRET`, `VITE_TURNSTILE_SITE_KEY` — optional.
+
+For full persistence (SQLite + attachments on disk), prefer the single-server
+or Docker deployment above.
+
+**Split hosting** (Netlify frontend + Railway/Render backend): set
 `VITE_API_BASE_URL` at build time and add the frontend origin to
 `MASF_CORS_ORIGINS`.
 

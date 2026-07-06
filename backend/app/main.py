@@ -56,8 +56,14 @@ _load_env_file()
 # --------------------------------------------------------------------------
 # Configuration (overridable via environment variables — see .env.example)
 # --------------------------------------------------------------------------
-DB_PATH = Path(os.getenv("MASF_DB_PATH", str(BACKEND_DIR / "data" / "submissions.db")))
-UPLOAD_DIR = Path(os.getenv("MASF_UPLOAD_DIR", str(BACKEND_DIR / "data" / "uploads")))
+# On serverless platforms (Vercel sets VERCEL=1) the project directory is
+# read-only and only /tmp is writable — and /tmp is EPHEMERAL, so submissions
+# and attachments do not persist between invocations there. Configure the
+# MASF_SMTP_* variables so every enquiry is emailed, or point MASF_DB_PATH at
+# persistent storage.
+_DEFAULT_DATA_DIR = Path("/tmp/masf-data") if os.getenv("VERCEL") else BACKEND_DIR / "data"
+DB_PATH = Path(os.getenv("MASF_DB_PATH", str(_DEFAULT_DATA_DIR / "submissions.db")))
+UPLOAD_DIR = Path(os.getenv("MASF_UPLOAD_DIR", str(_DEFAULT_DATA_DIR / "uploads")))
 ADMIN_TOKEN = os.getenv("MASF_ADMIN_TOKEN", "")
 TURNSTILE_SECRET = os.getenv("MASF_TURNSTILE_SECRET", "")
 CORS_ORIGINS = [
