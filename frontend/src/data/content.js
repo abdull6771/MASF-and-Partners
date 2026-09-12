@@ -447,65 +447,6 @@ export const credentials = [
 
 export const certStrip = ["CAC", "FIRS", "NSITF", "PENCOM", "ITF", "BPP", "NEMSA", "COREN"];
 
-// Board portraits: drop images with these exact filenames into
-// frontend/public/team/ (portrait orientation, ~800x1000px works well).
-// Cards show a branded initials placeholder until the file exists.
-export const leadership = [
-  {
-    name: "Engr. Mukhtar Ado",
-    role: "Chairman / Managing Director",
-    credentials: "MNSE, MIEEE, MCIA · COREN-registered electrical engineer (R.15,129, 2008)",
-    photo: "/team/engr-mukhtar-ado.jpg",
-  },
-  { name: "Engr. A. M. Lawal", role: "Director", photo: "/team/engr-a-m-lawal.jpg" },
-  { name: "Alh. Umar Usman", role: "Director", photo: "/team/alh-umar-usman.jpg" },
-  { name: "Engr. A. M. Ganda", role: "Director", photo: "/team/engr-a-m-ganda.jpg" },
-  { name: "Mal. Abdu A. Sule", role: "Director", photo: "/team/mal-abdu-a-sule.jpg" },
-  { name: "Arc. Sanusi Idriss", role: "Director", photo: "/team/arc-sanusi-idriss.jpg" },
-  {
-    name: "Bar. U. Dikko",
-    role: "Company Secretary",
-    credentials: "Legal counsel & governance",
-    photo: "/team/bar-u-dikko.jpg",
-  },
-];
-
-export const departments = [
-  { name: "Projects", roles: ["Project Manager", "Assistant Project Manager"] },
-  { name: "Engineering", roles: ["Information Technology", "Electrical", "Mechanical", "Civil / Architectural"] },
-  { name: "Finance", roles: ["Accountant", "Account Clerk"] },
-  { name: "Administration", roles: ["Personnel", "Head of Administration"] },
-];
-
-export const teamStrength = [
-  { count: "4", role: "Electrical Engineers" },
-  { count: "3", role: "Mechanical Engineers" },
-  { count: "1", role: "Civil Engineer" },
-  { count: "1", role: "Architect" },
-  { count: "5", role: "Computer & Communication Technologists" },
-  { count: "12", role: "Electricians" },
-  { count: "1", role: "Accountant" },
-  { count: "4", role: "Administrative Staff" },
-  { count: "2", role: "Drivers" },
-];
-
-export const expertPanel = [
-  "Team Leader — Engr. Mukhtar Ado",
-  "Quality Assurance",
-  "GIS / Meteorologist",
-  "Health Expert",
-  "Microbiologist",
-  "Chemist",
-  "Ecologist",
-  "Geology Expert",
-  "Soil Scientist",
-  "Waste Management Expert",
-  "Air Quality & Noise Specialist",
-  "Socio-economist",
-  "Power Systems Engineer",
-  "Estate Surveyor & Valuer",
-];
-
 export const coreValues = [
   {
     icon: Scale,

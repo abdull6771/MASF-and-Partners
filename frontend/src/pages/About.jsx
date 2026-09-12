@@ -1,19 +1,9 @@
-import { useState } from "react";
-import { Award, Building2, CalendarDays, HardHat, MapPin, Target, Telescope, UserRound, Users } from "lucide-react";
+import { Award, CalendarDays, MapPin, Target, Telescope, Users } from "lucide-react";
 import CtaBand from "../components/CtaBand.jsx";
 import PageHero from "../components/PageHero.jsx";
 import Reveal from "../components/Reveal.jsx";
 import SectionHeading from "../components/SectionHeading.jsx";
-import {
-  company,
-  coreValues,
-  departments,
-  expertPanel,
-  leadership,
-  mission,
-  teamStrength,
-  vision,
-} from "../data/content.js";
+import { company, coreValues, mission, vision } from "../data/content.js";
 import usePageMeta from "../lib/usePageMeta.js";
 import { card, container, eyebrow } from "../lib/styles.js";
 
@@ -129,193 +119,10 @@ function VisionMissionValues() {
   );
 }
 
-function initialsOf(name) {
-  return name
-    .replace(/^(Engr\.|Alh\.|Mal\.|Arc\.|Bar\.)\s*/i, "")
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0])
-    .join("")
-    .toUpperCase();
-}
-
-/**
- * Board card with a portrait slot. Drop an image at the path in
- * `person.photo` (see frontend/public/team/README.txt) and it replaces the
- * branded initials placeholder automatically — no code change needed.
- */
-function LeaderCard({ person }) {
-  const [photoAvailable, setPhotoAvailable] = useState(Boolean(person.photo));
-  return (
-    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md motion-reduce:transition-none motion-reduce:hover:translate-y-0">
-      <div className="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-brand-100 via-slate-100 to-sea-500/15">
-        {photoAvailable ? (
-          <img
-            src={person.photo}
-            alt={`Portrait of ${person.name}`}
-            loading="lazy"
-            onError={() => setPhotoAvailable(false)}
-            className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-          />
-        ) : (
-          <div className="flex h-full w-full flex-col items-center justify-center" aria-hidden="true">
-            <UserRound className="absolute -bottom-8 h-3/4 w-3/4 text-brand-200/50" strokeWidth={1} />
-            <span className="relative font-display text-4xl font-bold tracking-tight text-brand-700/70">
-              {initialsOf(person.name)}
-            </span>
-          </div>
-        )}
-      </div>
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="font-display text-base font-bold text-brand-950">{person.name}</h3>
-        <p className="mt-1 text-sm font-semibold text-brand-600">{person.role}</p>
-        {person.credentials && (
-          <p className="mt-2 text-xs leading-relaxed text-slate-500">{person.credentials}</p>
-        )}
-      </div>
-    </div>
-  );
-}
-
-function Leadership() {
-  return (
-    <section className="py-16 sm:py-20 lg:py-24">
-      <div className={container}>
-        <SectionHeading
-          eyebrow="Leadership"
-          title="A board that has built what it oversees"
-          lede="Engineers, an architect and legal counsel — chaired by a COREN-registered electrical engineer with nearly two decades of delivery."
-        />
-        <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {leadership.map((person, index) => (
-            <Reveal as="li" key={person.name} delay={(index % 4) * 60} className="h-full">
-              <LeaderCard person={person} />
-            </Reveal>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
-
-function Organisation() {
-  return (
-    <section className="bg-slate-50 py-16 sm:py-20 lg:py-24">
-      <div className={container}>
-        <SectionHeading
-          eyebrow="How we are organised"
-          title="A structure sized for delivery"
-          lede="The Board sets direction; the Managing Director drives four departments that plan, engineer, account for and administer every engagement."
-        />
-        <Reveal className="mt-12">
-          <div className="mx-auto max-w-md rounded-2xl border border-brand-200 bg-white p-5 text-center shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600">Board of Directors</p>
-            <p className="mt-1.5 font-display text-lg font-bold text-brand-950">Managing Director</p>
-            <p className="text-sm text-slate-500">Engr. Mukhtar Ado</p>
-          </div>
-          <div className="mx-auto mt-2 h-6 w-px bg-brand-300" aria-hidden="true" />
-          <ul className="mt-2 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {departments.map((department) => (
-              <li key={department.name} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <h3 className="font-display text-sm font-bold uppercase tracking-wide text-brand-800">
-                  {department.name}
-                </h3>
-                <ul className="mt-3 space-y-1.5">
-                  {department.roles.map((role) => (
-                    <li key={role} className="text-sm text-slate-600">
-                      {role}
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-
-        <Reveal className="mt-14">
-          <h3 className="font-display text-lg font-bold text-brand-950">Team strength — Abuja</h3>
-          <ul className="mt-5 flex flex-wrap gap-2.5">
-            {teamStrength.map((item) => (
-              <li
-                key={item.role}
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-700"
-              >
-                <span className="font-display font-bold text-brand-700">{item.count}</span>
-                {item.role}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-
-        <Reveal className="mt-14">
-          <h3 className="font-display text-lg font-bold text-brand-950">
-            The environmental expert panel
-          </h3>
-          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
-            Fourteen specialists cover every discipline an impact assessment demands — convened per
-            project under a single team leader.
-          </p>
-          <ul className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-            {expertPanel.map((role) => (
-              <li
-                key={role}
-                className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700"
-              >
-                <HardHat className="h-4 w-4 shrink-0 text-brand-500" aria-hidden="true" />
-                {role}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function HsePolicy() {
-  return (
-    <section className="py-16 sm:py-20 lg:py-24">
-      <div className={container}>
-        <Reveal className="on-dark relative overflow-hidden rounded-3xl bg-linear-to-br from-brand-900 via-brand-950 to-sea-900 px-6 py-12 sm:px-12 sm:py-14">
-          <Building2 className="absolute -right-8 -top-8 h-48 w-48 text-white/5" aria-hidden="true" />
-          <div className="relative max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-300">
-              HSE &amp; quality policy
-            </p>
-            <h2 className="mt-3 font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              One integrated management approach — quality, environment, and health &amp; safety
-            </h2>
-            <p className="mt-5 text-base leading-relaxed text-brand-100/85">
-              MASF &amp; Partners runs an integrated management approach aligning quality (QMS),
-              environmental (EMS) and occupational health &amp; safety (OHS) systems across every
-              engagement. Site work is planned around hazard identification and risk assessment before
-              mobilisation; environmental monitoring uses calibrated, company-owned instrumentation;
-              and every deliverable passes a structured quality-assurance review before release.
-            </p>
-            <ul className="mt-6 grid gap-3 sm:grid-cols-3">
-              {["Plan: hazards assessed before mobilisation", "Measure: calibrated, owned instruments", "Assure: structured QA on every deliverable"].map(
-                (item) => (
-                  <li
-                    key={item}
-                    className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-brand-100"
-                  >
-                    {item}
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
 export default function About() {
   usePageMeta(
     "About",
-    "Established 2013 in Abuja (RC 1161410): the story, leadership board, organisational structure and integrated HSE & quality policy of MASF & Partners Limited."
+    "Established 2013 in Abuja (RC 1161410): the story, vision, mission and values of MASF & Partners Limited."
   );
 
   return (
@@ -329,9 +136,6 @@ export default function About() {
       />
       <Story />
       <VisionMissionValues />
-      <Leadership />
-      <Organisation />
-      <HsePolicy />
       <CtaBand />
     </>
   );
