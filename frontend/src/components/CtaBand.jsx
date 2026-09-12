@@ -22,8 +22,8 @@ export default function CtaBand({
               Request a consultation
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
-            <Link to="/compliance" className={btnGhostDark}>
-              View our credentials
+            <Link to="/about" className={btnGhostDark}>
+              About the firm
             </Link>
           </div>
         </div>

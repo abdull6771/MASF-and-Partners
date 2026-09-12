@@ -57,23 +57,24 @@ def build() -> None:
             points.append((x, HEIGHT - offset - 40 + sag))
         draw.line(points, fill=(255, 255, 255, alpha), width=2)
 
-    # Monogram "M" (matches the favicon mark)
-    scale, ox, oy = 3.0, 78, 120
-    m_points = [(14, 46), (14, 18), (32, 35), (50, 18), (50, 46)]
-    scaled = [(ox + x * scale, oy + y * scale) for x, y in m_points]
-    draw.line(scaled, fill=(255, 255, 255, 230), width=12, joint="curve")
-    cx, cy = ox + 32 * scale, oy + 35 * scale
-    draw.ellipse([cx - 10, cy - 10, cx + 10, cy + 10], fill=(*LEMON, 255))
-
     image = Image.alpha_composite(image.convert("RGBA"), overlay)
     draw = ImageDraw.Draw(image)
+
+    logo_path = Path(__file__).resolve().parent.parent.parent / "frontend" / "public" / "logo.png"
+    if logo_path.is_file():
+        logo = Image.open(logo_path).convert("RGBA")
+        logo.thumbnail((240, 150), Image.Resampling.LANCZOS)
+        pad_x, pad_y = 20, 14
+        card = Image.new("RGBA", (logo.width + pad_x * 2, logo.height + pad_y * 2), (255, 255, 255, 255))
+        card.paste(logo, (pad_x, pad_y), logo)
+        image.paste(card, (64, 220), card)
 
     font_bold = load_font(["segoeuib.ttf", "arialbd.ttf"], 64)
     font_medium = load_font(["segoeui.ttf", "arial.ttf"], 30)
     font_italic = load_font(["segoeuii.ttf", "ariali.ttf"], 28)
     font_small = load_font(["segoeui.ttf", "arial.ttf"], 22)
 
-    left = 300
+    left = 430
     draw.rectangle([left, 158, left + 64, 165], fill=LEMON)
     draw.text((left, 190), "MASF & Partners", font=font_bold, fill=(255, 255, 255))
     draw.text((left, 268), "Limited", font=font_bold, fill=SKY)

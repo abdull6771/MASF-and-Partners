@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { ArrowUpRight, BadgeCheck } from "lucide-react";
+import { BadgeCheck } from "lucide-react";
 import { certStrip } from "../data/content.js";
 import { container } from "../lib/styles.js";
 
@@ -37,13 +36,6 @@ export default function CertStrip() {
             ))}
           </ul>
         </div>
-        <Link
-          to="/compliance"
-          className="inline-flex shrink-0 items-center gap-1 rounded-sm text-sm font-semibold text-brand-700 transition hover:text-brand-900"
-        >
-          All certifications, verified
-          <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-        </Link>
       </div>
     </section>
   );

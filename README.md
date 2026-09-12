@@ -7,7 +7,7 @@ environmental and engineering consultancy in Wuse II, Abuja (RC 1161410).
 
 | Folder      | Stack                                              | Purpose                                                 |
 | ----------- | -------------------------------------------------- | ------------------------------------------------------- |
-| `frontend/` | React 19 · Vite 6 · Tailwind CSS v4 · lucide-react | The website (7 pages + staff admin, client-side routed) |
+| `frontend/` | React 19 · Vite 6 · Tailwind CSS v4 · lucide-react | The website (6 pages + staff admin, client-side routed) |
 | `backend/`  | FastAPI · SQLite · Uvicorn                          | Contact API, attachments, admin listing, static host    |
 
 ## Quick start (two terminals)
@@ -35,10 +35,10 @@ backend on port 8000, so the contact form works end-to-end with no CORS setup.
 
 ## Features
 
-- **7 public pages** — Home, About (story, board, org structure, HSE policy),
+- **6 public pages** — Home, About (story, board, org structure, HSE policy),
   Services (4 pillars / 20 expandable services), Projects (filterable),
-  Capabilities (owned instrument fleet), Compliance (tender credentials),
-  Contact (validated form with optional file attachment).
+  Capabilities (owned instrument fleet), Contact (validated form with optional
+  file attachment).
 - **Contact pipeline** — submissions are validated (client + server),
   rate-limited per IP, honeypot-filtered, stored in SQLite with the uploaded
   RFQ/tender document, optionally emailed to the company inbox, and optionally
@@ -49,15 +49,14 @@ backend on port 8000, so the contact form works end-to-end with no CORS setup.
 - **WhatsApp click-to-chat** — floating button site-wide plus a contact-page
   entry (number configured in `frontend/src/data/content.js`).
 - **Company profile PDF** — generated, brand-styled 3-page profile at
-  `/downloads/MASF-Partners-Company-Profile.pdf`, linked from the Compliance
-  page and footer.
+  `/downloads/MASF-Partners-Company-Profile.pdf`, linked from the footer.
 - **SEO** — per-page meta, JSON-LD Organization + LocalBusiness, generated
   `sitemap.xml` + `robots.txt`, Open Graph tags with a branded 1200×630 share
   image (`/og-image.png`).
 - **Analytics-ready** — set `VITE_PLAUSIBLE_DOMAIN` to enable privacy-friendly
   Plausible analytics (no cookies, GDPR/NDPR-friendly).
-- **Testimonials & certificate scans** — data-driven and hidden until real
-  content is added (see Customisation below).
+- **Testimonials** — data-driven and hidden until real content is added
+  (see Customisation below).
 
 ## Configuration
 
@@ -146,7 +145,6 @@ daily Windows Task Scheduler job or a volume snapshot in Docker.
 | Add a project            | Append to `projects` in `content.js` (`category`, optional `featured: true`)              |
 | Add testimonials         | Fill the `testimonials` array in `content.js` — the Home section appears automatically     |
 | Board portraits          | Drop images into `frontend/public/team/` with the filenames listed in `frontend/public/team/README.txt` — cards swap from branded placeholders automatically |
-| Certificate scans        | Drop images in `frontend/public/certificates/`, then set `image: "/certificates/x.jpg"` on entries in `credentials` |
 | WhatsApp number          | `company.whatsapp` in `content.js`                                                        |
 | Regenerate profile PDF   | Edit + run `backend/scripts/generate_profile_pdf.py` (needs `pip install -r backend/requirements-dev.txt`) |
 | Regenerate share image   | `backend/scripts/generate_og_image.py`                                                    |
@@ -164,7 +162,7 @@ daily Windows Task Scheduler job or a volume snapshot in Docker.
 - [ ] Replace the SVG monogram with the real company logo
       (`frontend/src/components/BrandMark.jsx`, `frontend/public/favicon.svg`).
 - [ ] Add real project/team photos when available.
-- [ ] Add certificate scans and client testimonials (see Customisation).
+- [ ] Add client testimonials (see Customisation).
 - [ ] Create a **Google Business Profile** for “MASF & Partners Limited, Wuse
       II, Abuja” — free, and the biggest quick win for local search.
 - [ ] Optional: enable Plausible analytics and Cloudflare Turnstile.

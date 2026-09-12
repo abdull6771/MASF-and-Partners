@@ -7,7 +7,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const PLACEHOLDER = "https://masfpartners.example";
-const ROUTES = ["/", "/about", "/services", "/projects", "/capabilities", "/compliance", "/contact"];
+const ROUTES = ["/", "/about", "/services", "/projects", "/capabilities", "/contact"];
 
 const distDir = resolve(dirname(fileURLToPath(import.meta.url)), "..", "dist");
 if (!existsSync(distDir)) {

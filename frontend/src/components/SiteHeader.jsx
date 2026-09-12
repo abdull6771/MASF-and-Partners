@@ -13,7 +13,6 @@ const NAV_ITEMS = [
   { to: "/services", label: "Services" },
   { to: "/projects", label: "Projects" },
   { to: "/capabilities", label: "Capabilities" },
-  { to: "/compliance", label: "Compliance" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -46,10 +45,9 @@ function MobileMenu({ panelRef, onClose }) {
       className="on-dark fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-brand-950"
     >
       <DotGrid className="pointer-events-none absolute inset-0 h-full w-full text-white/[0.05]" id="menu-dots" />
-      <div className={`${container} relative flex h-16 shrink-0 items-center justify-between`}>
-        <span className="flex items-center gap-3">
-          <BrandMark className="h-9 w-9" />
-          <span className="font-display text-base font-bold text-white">MASF &amp; Partners</span>
+      <div className={`${container} relative flex h-[4.75rem] shrink-0 items-center justify-between`}>
+        <span className="flex items-center">
+          <BrandMark alt="" className="h-12 w-auto max-h-12" />
         </span>
         <button
           type="button"
@@ -164,17 +162,9 @@ export default function SiteHeader() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className={`${container} flex h-16 items-center justify-between gap-4 lg:h-[4.5rem]`}>
-        <Link to="/" className="flex items-center gap-3 rounded-md" aria-label="MASF & Partners Limited — home">
-          <BrandMark className="h-9 w-9 shrink-0 lg:h-10 lg:w-10" />
-          <span className="leading-tight">
-            <span className="block font-display text-[0.95rem] font-bold tracking-tight text-white lg:text-base">
-              MASF &amp; Partners
-            </span>
-            <span className="block text-[0.62rem] font-medium uppercase tracking-[0.18em] text-brand-300">
-              Environmental &amp; Engineering
-            </span>
-          </span>
+      <div className={`${container} flex h-[4.75rem] items-center justify-between gap-4 lg:h-20`}>
+        <Link to="/" className="flex items-center rounded-md" aria-label="MASF & Partners Limited — home">
+          <BrandMark alt="" className="h-12 w-auto max-h-12 shrink-0 sm:h-14 sm:max-h-14 lg:h-16 lg:max-h-16" />
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">

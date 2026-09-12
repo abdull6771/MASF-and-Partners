@@ -9,7 +9,6 @@ const QUICK_LINKS = [
   { to: "/about", label: "About us" },
   { to: "/projects", label: "Projects" },
   { to: "/capabilities", label: "Capabilities" },
-  { to: "/compliance", label: "Compliance & certifications" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -20,15 +19,10 @@ export default function SiteFooter() {
       <MonogramMark className="pointer-events-none absolute -bottom-16 right-8 hidden h-72 w-72 -rotate-6 text-white/[0.04] lg:block" />
       <div className={`${container} relative grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:py-16`}>
         <div>
-          <div className="flex items-center gap-3">
-            <BrandMark className="h-10 w-10" />
-            <div className="leading-tight">
-              <p className="font-display text-base font-bold text-white">MASF &amp; Partners</p>
-              <p className="text-[0.62rem] font-medium uppercase tracking-[0.18em] text-brand-300">
-                Limited · {company.rc}
-              </p>
-            </div>
-          </div>
+          <BrandMark className="h-20 w-auto max-w-[220px]" />
+          <p className="mt-3 text-[0.62rem] font-medium uppercase tracking-[0.18em] text-brand-300">
+            Limited · {company.rc}
+          </p>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-brand-100/80">
             Environmental &amp; engineering consultancy delivering measurable advantage from Abuja
             since 2013.

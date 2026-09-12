@@ -6,7 +6,6 @@ import WhatsAppButton from "./components/WhatsAppButton.jsx";
 import About from "./pages/About.jsx";
 import Admin from "./pages/Admin.jsx";
 import Capabilities from "./pages/Capabilities.jsx";
-import Compliance from "./pages/Compliance.jsx";
 import Contact from "./pages/Contact.jsx";
 import Home from "./pages/Home.jsx";
 import NotFound from "./pages/NotFound.jsx";
@@ -31,7 +30,6 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/capabilities" element={<Capabilities />} />
-          <Route path="/compliance" element={<Compliance />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
